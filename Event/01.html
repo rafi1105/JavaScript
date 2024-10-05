@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+          
+          img{ 
+               width: 250px ;
+               height: 200px;  
+               padding: 25px  ;
+               
+               
+          }
+          li{margin: 20px;   border: 0px solid rgb(22, 22, 22);  box-shadow:  2px 2px 10px ; width: 300px; height: 350px;  border-radius: 5px;
+                }
+         
+          ul{ display: flex; box-sizing: border-box;}
+          .img{  }
+          button{ 
+              
+               width: 250px ; 
+               height: auto;
+
+               padding: 15px 10px ;
+               margin: 10px 25px ;
+               border-radius: 5px;
+              background: #2c7827;
+              border: none;
+              transform: rotate(30);
+          }
+          a{ color:  white; font-weight: bold; text-decoration: none;  
+                }
+     button:hover{ background: rgb(233, 107, 107); font-weight: bold ;  transition:  linear 5ms ; }
+     .dark-mode{ background-color: black; color: white; }
+     </style>
+</head>
+<body id="body">
+     <div class="img">
+          <ul>
+               <li class="w"><img src="https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" id="img1">
+               <button> <a href="">Add Me</a> </button></li>
+               <li class="w"><img src="https://images.pexels.com/photos/36762/scarlet-honeyeater-bird-red-feathers.jpg?auto=compress&cs=tinysrgb&w=600" alt="" id="img2"></li>
+               <li class="w"><img src="https://images.pexels.com/photos/45853/grey-crowned-crane-bird-crane-animal-45853.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" id="img3"></li>
+               <li class="w"><img src="https://images.pexels.com/photos/372166/pexels-photo-372166.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" id="img4"></li>
+          </ul>
+          
+   <button type="button" onclick="dark()">Dark Mode</button>
+     </div>
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, commodi ullam vel eos veritatis ipsa sequi vitae quis debitis dolore. Repellat quod et aliquam corrupti in ratione minima, quaerat ab?</p>
+     <script>
+           var darkMode = false;
+          function dark() {
+               var body = document.getElementById('body');
+            
+            // Check if dark mode is enabled
+            if (darkMode) {
+                // If dark mode is enabled, switch to normal mode
+                body.style.background = 'white';
+            } else {
+                // If dark mode is not enabled, switch to dark mode
+                body.style.background = 'black';
+            }
+            
+            // Toggle the darkMode variable
+            darkMode = !darkMode;
+        // list will be white
+               var elements = document.getElementsByClassName('w');
+                    for (var i = 0; i < elements.length; i++) {
+                    elements[i].style.background = "white";
+}
+// list work done !
+// writing will be white in dark mode
+var element = document.body;
+   element.classList.toggle("dark-mode");
+          }
+     </script>
+</body>
+</html>
