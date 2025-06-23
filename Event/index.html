@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <h2>click event</h2>
+        <button class="demo-btn" id="clickBtn">Click Me</button>
+        <p id="clickResult">Click the buttons above to see click events in action!</p>
+        <script>
+            const clickBtn= document.getElementById("clickBtn")
+            clickBtn.addEventListener('click',()=>{
+              clickResult.textContent= ('working')
+            clickResult.style.cssText = "color: red; font-weight: bold; background-color: yellow;";
+            })
+        </script>
+
+        <button id="countBtn" class="demo-btn">click count</button>
+        <span id="clickCount">Clicks: <span id="counter">0</span> </span>
+        <script>
+            let c=0;
+            const btn = document.getElementById('countBtn')
+            const counter = document.getElementById('counter')
+            btn.addEventListener('click',()=>{
+                c++;
+                counter.textContent= c;
+            })
+        </script>
+    </section>
+    <hr>
+    <section>
+        <h2> mouseenter/ mousleave</h2>
+        <div id="mousebox" style="height: 100px; " >
+            <p id="mouseinfo"></p>
+        </div>
+    <script>
+        const box = document.getElementById('mousebox')
+        const info = document.getElementById('mouseinfo')
+        box.addEventListener('mouseenter',()=>{
+            info.textContent= "mouser enter"
+            info.style.cssText= "background-color: red;";
+        })
+        box.addEventListener('mouseleave', () => {
+            info.textContent = "mouse leave";
+            info.style.cssText = "background-color: transparent;";
+        });
+        box.addEventListener('mousemove',(e)=>{
+            const x= e.offsetX;
+            const y =e.offsetY;
+            box.style.background= `radial-gradient(circle at ${x}px ${y}px,lightblue 2px, blue 1px, transparent 10px)`
+        });
+         box.addEventListener('mouseleave', () => {
+            box.style.background = "rgb(255, 255, 200)";
+        });
+    </script>
+    <hr>
+    </section>
+</body>
+</html>

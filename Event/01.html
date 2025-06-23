@@ -5,76 +5,538 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
      <style>
-          
-          img{ 
-               width: 250px ;
-               height: 200px;  
-               padding: 25px  ;
-               
-               
-          }
-          li{margin: 20px;   border: 0px solid rgb(22, 22, 22);  box-shadow:  2px 2px 10px ; width: 300px; height: 350px;  border-radius: 5px;
-                }
-         
-          ul{ display: flex; box-sizing: border-box;}
-          .img{  }
-          button{ 
-              
-               width: 250px ; 
-               height: auto;
+          .container {
+               max-width: 1800px;
+               margin: 0 auto;
+             position: relative;
+               background: #fff;
+               box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+               border-radius: 8px;
+               overflow: hidden;
+               box-sizing: border-box;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               justify-content: center;
 
-               padding: 15px 10px ;
-               margin: 10px 25px ;
-               border-radius: 5px;
-              background: #2c7827;
-              border: none;
-              transform: rotate(30);
           }
-          a{ color:  white; font-weight: bold; text-decoration: none;  
-                }
-     button:hover{ background: rgb(233, 107, 107); font-weight: bold ;  transition:  linear 5ms ; }
-     .dark-mode{ background-color: black; color: white; }
+          nav{
+               margin-bottom: 20px;
+               display: flex;
+               gap: 10px;
+               background: #000;
+               width: 100%;
+               color: #fff;
+               align-items: center;
+               justify-content: flex-end;
+          }
+          nav a {
+               color: #fff;
+               padding: 20px;
+               text-decoration: none;
+          }
+          a {
+               position: relative;
+          }
+          a::after{
+               position: absolute;
+               bottom: 1px;
+               left: 50%;
+               transform: translateX(-50%);
+               height: 3px;
+               width: 0;
+               background: orange;
+               transition: all 0.9s;
+               content: '';
+               display: block;
+               border-radius: 2px;
+          }          a:hover::after{
+               width: 100%;
+               background: rgb(255, 19, 19);
+          }
+
+          /* Demo Styles for Event Listener Examples */
+          .lesson-section {
+               margin: 30px 0;
+               padding: 20px;
+               background: #f9f9f9;
+               border-radius: 8px;
+               border-left: 4px solid #333;
+          }
+
+          .lesson-section h2 {
+               color: #333;
+               margin-bottom: 15px;
+               border-bottom: 2px solid #333;
+               padding-bottom: 5px;
+          }
+
+          .demo-btn {
+               background: #333;
+               color: white;
+               border: none;
+               padding: 12px 20px;
+               margin: 10px 5px;
+               border-radius: 5px;
+               cursor: pointer;
+               transition: all 0.3s ease;
+               font-size: 14px;
+          }
+
+          .demo-btn:hover {
+               background: #555;
+               transform: translateY(-2px);
+          }
+
+          .demo-btn:active {
+               transform: translateY(0);
+               background: #000;
+          }
+
+          .demo-box {
+               background: linear-gradient(45deg, #e3f2fd, #bbdefb);
+               border: 2px dashed #333;
+               padding: 30px;
+               margin: 15px 0;
+               border-radius: 10px;
+               text-align: center;
+               cursor: pointer;
+               transition: all 0.3s ease;
+          }
+
+          .demo-box:hover {
+               background: linear-gradient(45deg, #ffecb3, #fff176);
+               border-color: orange;
+          }
+
+          .demo-input {
+               width: 100%;
+               max-width: 300px;
+               padding: 12px;
+               margin: 10px 5px;
+               border: 2px solid #ddd;
+               border-radius: 5px;
+               font-size: 16px;
+               transition: border-color 0.3s ease;
+          }
+
+          .demo-input:focus {
+               outline: none;
+               border-color: #333;
+               box-shadow: 0 0 10px rgba(51, 51, 51, 0.2);
+          }
+
+          .delegate-btn {
+               background: #4CAF50;
+               color: white;
+               border: none;
+               padding: 10px 15px;
+               margin: 5px;
+               border-radius: 5px;
+               cursor: pointer;
+               transition: all 0.3s ease;
+          }
+
+          .delegate-btn:hover {
+               background: #45a049;
+               transform: scale(1.05);
+          }
+
+          #clickResult, #keyInfo, #formResult, #delegationResult {
+               background: #e8f5e8;
+               padding: 15px;
+               border-radius: 5px;
+               margin: 10px 0;
+               border-left: 4px solid #4CAF50;
+               font-weight: bold;
+          }
+
+          #mouseInfo, #windowInfo, #scrollInfo {
+               background: #fff3e0;
+               padding: 10px;
+               border-radius: 5px;
+               margin: 10px 0;
+               border-left: 4px solid orange;
+          }
+
+          #clickCount {
+               background: #333;
+               color: white;
+               padding: 8px 15px;
+               border-radius: 20px;
+               font-weight: bold;
+               margin-left: 10px;
+          }
+
      </style>
 </head>
-<body id="body">
-     <div class="img">
-          <ul>
-               <li class="w"><img src="https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" id="img1">
-               <button> <a href="">Add Me</a> </button></li>
-               <li class="w"><img src="https://images.pexels.com/photos/36762/scarlet-honeyeater-bird-red-feathers.jpg?auto=compress&cs=tinysrgb&w=600" alt="" id="img2"></li>
-               <li class="w"><img src="https://images.pexels.com/photos/45853/grey-crowned-crane-bird-crane-animal-45853.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" id="img3"></li>
-               <li class="w"><img src="https://images.pexels.com/photos/372166/pexels-photo-372166.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" id="img4"></li>
-          </ul>
+<body>
+     <div class="container">
+     <nav>
+          <a href="http://example.com">Link 1</a>
+          <a href="http://example.com">Link 2</a>
+          <a href="http://example.com">Link 3</a>
+          <a href="http://example.com">Link 4</a>
+          <a href="http://example.com">Link 5</a>
+     </nav>     <h1>JavaScript Event Listeners Tutorial</h1>
+     
+     <!-- Click Events -->
+     <section class="lesson-section">
+          <h2>1. Click Events</h2>
+          <button id="clickBtn" class="demo-btn">Click Me!</button>
+          <button id="multiClickBtn" class="demo-btn">Click Counter</button>
+          <p id="clickResult">Click the buttons above to see click events in action!</p>
+          <span id="clickCount">Clicks: 0</span>
+     </section>
+
+     <!-- Mouse Events -->
+     <section class="lesson-section">
+          <h2>2. Mouse Events</h2>
+          <div id="mouseBox" class="demo-box">
+               <p>Hover over me and move your mouse!</p>
+               <p id="mouseInfo">Mouse info will appear here</p>
+          </div>
+     </section>
+
+     <!-- Keyboard Events -->
+     <section class="lesson-section">
+          <h2>3. Keyboard Events</h2>
+          <input type="text" id="keyInput" placeholder="Type something here..." class="demo-input">
+          <p id="keyInfo">Key information will appear here</p>
+     </section>
+
+     <!-- Form Events -->
+     <section class="lesson-section">
+          <h2>4. Form Events</h2>
+          <form id="demoForm">
+               <input type="text" id="nameInput" placeholder="Enter your name" required class="demo-input">
+               <input type="email" id="emailInput" placeholder="Enter your email" required class="demo-input">
+               <button type="submit" class="demo-btn">Submit</button>
+          </form>
+          <p id="formResult">Form events will appear here</p>
+     </section>
+
+     <!-- Window Events -->
+     <section class="lesson-section">
+          <h2>5. Window Events</h2>
+          <button id="resizeBtn" class="demo-btn">Check Window Size</button>
+          <button id="scrollBtn" class="demo-btn">Scroll to Top</button>
+          <p id="windowInfo">Window: <span id="windowSize"></span></p>
+          <p id="scrollInfo">Scroll position: <span id="scrollPos">0</span></p>
+     </section>
+
+     <!-- Event Delegation -->
+     <section class="lesson-section">
+          <h2>6. Event Delegation</h2>
+          <div id="delegationContainer">
+               <button class="delegate-btn">Button 1</button>
+               <button class="delegate-btn">Button 2</button>
+               <button class="delegate-btn">Button 3</button>
+          </div>
+          <button id="addBtn" class="demo-btn">Add New Button</button>
+          <p id="delegationResult">Click any button above to see event delegation!</p>
+     </section>     <footer>
+          <p>© 2023 Event Organization - Event Listeners Tutorial</p>
+     </footer> 
+</div>
+
+<script>
+// ================================
+// EVENT LISTENERS TUTORIAL
+// ================================
+
+console.log("🎉 Event Listeners Tutorial Started!");
+
+// ================================
+// 1. CLICK EVENTS
+// ================================
+console.log("📝 Learning Click Events...");
+
+// Simple click event
+const clickBtn = document.getElementById('clickBtn');
+const clickResult = document.getElementById('clickResult');
+
+clickBtn.addEventListener('click', function() {
+     clickResult.textContent = "Button was clicked! ✅";
+     clickResult.style.background = "#d4edda";
+     console.log("Button clicked!");
+});
+
+// Multiple click counter
+let clickCounter = 0;
+const multiClickBtn = document.getElementById('multiClickBtn');
+const clickCount = document.getElementById('clickCount');
+
+multiClickBtn.addEventListener('click', function(event) {
+     clickCounter++;
+     clickCount.textContent = `Clicks: ${clickCounter}`;
+     console.log(`Button clicked ${clickCounter} times`);
+     
+     // Event object properties
+     console.log("Event details:", {
+          type: event.type,
+          target: event.target.textContent,
+          timeStamp: event.timeStamp
+     });
+});
+
+// ================================
+// 2. MOUSE EVENTS
+// ================================
+console.log("🖱️ Learning Mouse Events...");
+
+const mouseBox = document.getElementById('mouseBox');
+const mouseInfo = document.getElementById('mouseInfo');
+
+// Mouse enter
+mouseBox.addEventListener('mouseenter', function() {
+     mouseInfo.textContent = "Mouse entered the box! 🐭";
+     console.log("Mouse entered");
+});
+
+// Mouse leave
+mouseBox.addEventListener('mouseleave', function() {
+     mouseInfo.textContent = "Mouse left the box! 👋";
+     console.log("Mouse left");
+});
+
+// Mouse move
+mouseBox.addEventListener('mousemove', function(event) {
+     const rect = mouseBox.getBoundingClientRect();
+     const x = event.clientX - rect.left;
+     const y = event.clientY - rect.top;
+     mouseInfo.textContent = `Mouse position: X=${Math.round(x)}, Y=${Math.round(y)}`;
+});
+
+// Double click
+mouseBox.addEventListener('dblclick', function() {
+     mouseBox.style.background = "linear-gradient(45deg, #ffcdd2, #f8bbd9)";
+     mouseInfo.textContent = "Double clicked! 🎯";
+     console.log("Double click detected");
+});
+
+// ================================
+// 3. KEYBOARD EVENTS
+// ================================
+console.log("⌨️ Learning Keyboard Events...");
+
+const keyInput = document.getElementById('keyInput');
+const keyInfo = document.getElementById('keyInfo');
+
+// Key down
+keyInput.addEventListener('keydown', function(event) {
+     keyInfo.textContent = `Key pressed: ${event.key} (Code: ${event.code})`;
+     console.log("Key down:", event.key);
+     
+     // Special keys
+     if (event.key === 'Enter') {
+          keyInfo.textContent += " - Enter key pressed! ⏎";
+     }
+     if (event.ctrlKey) {
+          keyInfo.textContent += " - Ctrl is held down! 🎛️";
+     }
+});
+
+// Key up
+keyInput.addEventListener('keyup', function(event) {
+     console.log("Key up:", event.key);
+});
+
+// Input event (when value changes)
+keyInput.addEventListener('input', function(event) {
+     const length = event.target.value.length;
+     keyInfo.textContent += ` | Characters: ${length}`;
+});
+
+// ================================
+// 4. FORM EVENTS
+// ================================
+console.log("📝 Learning Form Events...");
+
+const demoForm = document.getElementById('demoForm');
+const nameInput = document.getElementById('nameInput');
+const emailInput = document.getElementById('emailInput');
+const formResult = document.getElementById('formResult');
+
+// Form submission
+demoForm.addEventListener('submit', function(event) {
+     event.preventDefault(); // Prevent actual form submission
+     
+     const name = nameInput.value;
+     const email = emailInput.value;
+     
+     formResult.textContent = `Form submitted! Name: ${name}, Email: ${email} ✅`;
+     console.log("Form submitted:", { name, email });
+});
+
+// Input focus and blur
+nameInput.addEventListener('focus', function() {
+     formResult.textContent = "Name input focused! 👁️";
+     console.log("Name input focused");
+});
+
+nameInput.addEventListener('blur', function() {
+     formResult.textContent = "Name input lost focus! 😴";
+     console.log("Name input blurred");
+});
+
+// Input validation
+emailInput.addEventListener('change', function(event) {
+     const email = event.target.value;
+     const isValid = email.includes('@');
+     
+     if (isValid) {
+          formResult.textContent = "Valid email format! ✅";
+          event.target.style.borderColor = "#4CAF50";
+     } else {
+          formResult.textContent = "Invalid email format! ❌";
+          event.target.style.borderColor = "#f44336";
+     }
+});
+
+// ================================
+// 5. WINDOW EVENTS
+// ================================
+console.log("🪟 Learning Window Events...");
+
+const resizeBtn = document.getElementById('resizeBtn');
+const scrollBtn = document.getElementById('scrollBtn');
+const windowSize = document.getElementById('windowSize');
+const scrollPos = document.getElementById('scrollPos');
+
+// Window resize
+window.addEventListener('resize', function() {
+     windowSize.textContent = `${window.innerWidth} x ${window.innerHeight}`;
+     console.log("Window resized:", window.innerWidth, "x", window.innerHeight);
+});
+
+// Window scroll
+window.addEventListener('scroll', function() {
+     scrollPos.textContent = Math.round(window.scrollY);
+     console.log("Scroll position:", window.scrollY);
+});
+
+// Manual window size check
+resizeBtn.addEventListener('click', function() {
+     windowSize.textContent = `${window.innerWidth} x ${window.innerHeight}`;
+     alert(`Window size: ${window.innerWidth} x ${window.innerHeight}`);
+});
+
+// Scroll to top
+scrollBtn.addEventListener('click', function() {
+     window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+     });
+});
+
+// ================================
+// 6. EVENT DELEGATION
+// ================================
+console.log("🎯 Learning Event Delegation...");
+
+const delegationContainer = document.getElementById('delegationContainer');
+const addBtn = document.getElementById('addBtn');
+const delegationResult = document.getElementById('delegationResult');
+let buttonCount = 3;
+
+// Event delegation - one listener for all buttons
+delegationContainer.addEventListener('click', function(event) {
+     if (event.target.classList.contains('delegate-btn')) {
+          delegationResult.textContent = `Clicked: ${event.target.textContent} 🎯`;
+          console.log("Delegated click:", event.target.textContent);
           
-   <button type="button" onclick="dark()">Dark Mode</button>
-     </div>
-     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, commodi ullam vel eos veritatis ipsa sequi vitae quis debitis dolore. Repellat quod et aliquam corrupti in ratione minima, quaerat ab?</p>
-     <script>
-           var darkMode = false;
-          function dark() {
-               var body = document.getElementById('body');
-            
-            // Check if dark mode is enabled
-            if (darkMode) {
-                // If dark mode is enabled, switch to normal mode
-                body.style.background = 'white';
-            } else {
-                // If dark mode is not enabled, switch to dark mode
-                body.style.background = 'black';
-            }
-            
-            // Toggle the darkMode variable
-            darkMode = !darkMode;
-        // list will be white
-               var elements = document.getElementsByClassName('w');
-                    for (var i = 0; i < elements.length; i++) {
-                    elements[i].style.background = "white";
+          // Add visual feedback
+          event.target.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+               event.target.style.transform = 'scale(1)';
+          }, 150);
+     }
+});
+
+// Add new button dynamically
+addBtn.addEventListener('click', function() {
+     buttonCount++;
+     const newButton = document.createElement('button');
+     newButton.className = 'delegate-btn';
+     newButton.textContent = `Button ${buttonCount}`;
+     delegationContainer.appendChild(newButton);
+     
+     delegationResult.textContent = `New button added! Try clicking it. 🆕`;
+     console.log("New button added:", buttonCount);
+});
+
+// ================================
+// PAGE LOAD EVENTS
+// ================================
+console.log("🚀 Learning Page Load Events...");
+
+// DOM Content Loaded (already loaded since script is at bottom)
+document.addEventListener('DOMContentLoaded', function() {
+     console.log("✅ DOM Content Loaded!");
+});
+
+// Window load (all resources loaded)
+window.addEventListener('load', function() {
+     console.log("✅ Window fully loaded!");
+     
+     // Initial window size display
+     windowSize.textContent = `${window.innerWidth} x ${window.innerHeight}`;
+});
+
+// Before unload (when leaving page)
+window.addEventListener('beforeunload', function(event) {
+     console.log("👋 Page is about to unload");
+     // Uncomment to show confirmation dialog
+     // event.returnValue = "Are you sure you want to leave?";
+});
+
+// ================================
+// ADVANCED EVENT CONCEPTS
+// ================================
+console.log("🔥 Advanced Event Concepts...");
+
+// Event capturing and bubbling example
+document.body.addEventListener('click', function(event) {
+     console.log("🎈 Event bubbled to body:", event.target.tagName);
+}, false); // false = bubbling phase (default)
+
+// Remove event listener example
+function temporaryListener() {
+     console.log("⏰ This listener will be removed after 5 seconds");
 }
-// list work done !
-// writing will be white in dark mode
-var element = document.body;
-   element.classList.toggle("dark-mode");
-          }
-     </script>
+
+document.addEventListener('click', temporaryListener);
+
+setTimeout(() => {
+     document.removeEventListener('click', temporaryListener);
+     console.log("🗑️ Temporary listener removed");
+}, 5000);
+
+// ================================
+// TUTORIAL SUMMARY
+// ================================
+console.log(`
+🎓 EVENT LISTENERS TUTORIAL COMPLETE!
+
+📚 What you learned:
+1. ✅ Click Events - Basic interactions
+2. ✅ Mouse Events - Hover, move, enter, leave
+3. ✅ Keyboard Events - Key presses and input
+4. ✅ Form Events - Submit, focus, blur, validation
+5. ✅ Window Events - Resize, scroll, load
+6. ✅ Event Delegation - Efficient event handling
+7. ✅ Event Objects - Properties and methods
+8. ✅ preventDefault() - Stop default behavior
+9. ✅ Event bubbling and capturing
+10. ✅ Adding/removing listeners dynamically
+
+🔥 Practice Tips:
+- Open Developer Tools (F12) to see console logs
+- Try interacting with all the elements
+- Resize your window and scroll the page
+- Check the Network tab to see no actual form submissions
+`);
+</script>
 </body>
 </html>

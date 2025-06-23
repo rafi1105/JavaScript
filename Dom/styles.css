@@ -1,0 +1,53 @@
+.heading {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container-box ul {
+    list-style-type: none;
+}
+
+.container-box li {
+    display: inline-block;
+    margin: 0px;
+    border: 2px solid #000;
+    max-width: 350px;
+   
+   display: flex;
+    flex-direction: row;
+    columns: 2;
+  
+    padding: 0px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.container-box img {
+    width: 150px;
+    border: 1px solid #000;
+    margin: 20px;
+    justify-content: left;
+  
+}
+.container-box li .content {  
+    margin-left:20px;
+    position: relative;
+    justify-content: center;
+    max-width: 100px
+}
+.container-box li .content button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    
+    
+    bottom: 5px;
+    position: absolute;
+}

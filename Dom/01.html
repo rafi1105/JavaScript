@@ -4,9 +4,36 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
+     <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
 </head>
 <body>
-     <h1>Learing about dom</h1>
+     <h1>Learning about DOM</h1>
      <h2 id="title" class="heading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus autem fuga praesentium rerum! Officiis adipisci, fugit maxime incidunt, vitae molestias rem non itaque odio laborum sed, accusantium ea dolore delectus.</h2>
+     <div class="container-box">
+          <ul>
+               <li><img src="https://media.istockphoto.com/id/466175630/photo/tomato-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=ELzCVzaiRMgiO7A5zQLkuws0N_lvPxrgJWPn7C7BXz0=" alt="Image 1"><div class="content">
+                    <h3 >Tomato</h3>
+                    <button>Add Cart</button>
+                    <p></p>
+               </div></li>
+              
+          </ul>
+          <p id="demo">hello rafi</p>
+     </div>
+     <button onclick="dark()">Dark mode</button>
+     <script>
+          function dark(){
+               var text = document.querySelectorAll('h3,h2, h1, p, span');
+               var body = document.body;
+               if (body.style.backgroundColor === 'white' || body.style.backgroundColor === ''){
+                    body.style.backgroundColor = 'black';
+                    text.forEach(element => element.style.color = 'white');
+               } else {
+                    body.style.backgroundColor = 'white';
+                    text.forEach(element => element.style.color = 'black');
+               }
+          }
+          document.getElementById('demo').style.color = 'red';
+     </script>
 </body>
 </html>

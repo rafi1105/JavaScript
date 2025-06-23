@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head">Task Management</h1>
+<form action="" id="taskform">
+    <input type="text" name="inputask" id="inputask">
+    <button id="addtask" type="submit">Add Task</button>
+    <button type="submit" id="upatetask">Update Task</button>
+    <button type="submit" id="deletetask">Delete Task</button>
+    <ul id="tasklist"></ul>
+</form>
+    <script>
+        const addtask = document.getElementById('addtask');
+        const inputask = document.getElementById('inputask');
+        const upatetask = document.getElementById('upatetask');
+        const deletetask = document.getElementById('deletetask');
+        let idtask=0;
+        const tasklist= document.getElementById('tasklist');
+        
+        const taskform = document.getElementById('taskform');
+         
+        taskform.addEventListener('submit', (e)=>
+    
+    {
+        e.preventDefault();
+        const task= inputask.value.trim();
+        if (task){
+            const list = document.createElement('li');
+            list.textContent= task;
+            list.id= `task-${idtask++}`;
+            tasklist.appendChild(list);
+            inputask.value= "";
+        }
+    });
+           // Update Task functionality (placeholder)
+           upatetask.addEventListener('click', () => {
+            const taskIdToUpdate = prompt("Enter the task ID to update (e.g., task-0):");
+            const taskToUpdate = document.getElementById(taskIdToUpdate);
+
+            if (taskToUpdate) {
+                const newTaskContent = prompt("Enter the new task content:");
+                if (newTaskContent) {
+                    taskToUpdate.textContent = newTaskContent;
+                    alert("Task updated successfully!");
+                } else {
+                    alert("Task content cannot be empty.");
+                }
+            } else {
+                alert("Task not found. Please enter a valid ID.");
+            }
+        });
+
+        // Delete Task functionality
+        deletetask.addEventListener('click', () => {
+            const taskIdToDelete = prompt("Enter the task ID to delete (e.g., task-0):");
+            const taskToDelete = document.getElementById(taskIdToDelete);
+
+            if (taskToDelete) {
+                taskToDelete.remove(); // Remove the task from the list
+                alert("Task deleted successfully!");
+            } else {
+                alert("Task not found. Please enter a valid ID.");
+            }
+          
+        });
+        tasklist.addEventListener('click', (e) => {
+            if (e.target && e.target.nodeName === "LI" ) {
+            e.target.style.textDecoration = 'line-through';
+
+            }
+        });
+const header= document.getElementById('head');
+header.addEventListener('click', (e)=> {
+    if (e.target){
+        const newheader = prompt("enter the header", e.target.textContent);
+        if (newheader) e.target.innerHTML = newheader;
+    }
+})
+    </script>
+</body>
+</html>

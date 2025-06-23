@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">hello rafi</p>
+    <p id="remove">Remove me!</p>
+    <a href="#" id="home">home</a>
+    <a href="#">home</a>
+    <a href="#">home</a>
+    <a href="#">home</a>
+    <script>
+        // changing HTML Elemnent using JavaScript
+        document.getElementById('demo').innerHTML = 'Hello Rafi';
+        document.getElementById('demo').style.color = 'red';
+        document.getElementById('demo').attribute = 'class';
+        document.getElementById('demo').setAttribute('class', 'heading'); 
+        document.getElementsByClassName('heading')[0].style.fontSize = '36px';
+        // adding new HTML element using JavaScript
+        var newElement = document.createElement('h1');
+        newElement.innerHTML = 'This is a new element';
+        document.body.appendChild(newElement); // append is used to add new element
+        // remove HTML element using JavaScript
+        var removeElement = document.getElementById('remove');
+        document.body.removeChild(removeElement);
+        //replace HTML element using JavaScript
+        var replaceElement = document.createElement('h2');
+        replaceElement.innerHTML = 'This is a new element now!';
+        document.body.replaceChild(replaceElement, newElement);
+        // write into html using JavaScript
+        document.write('This is written using JavaScript <br>');
+       var x = document.baseURI; 
+         document.write(x);
+
+// select all query 
+        var x = document.querySelectorAll('a');
+        x.forEach(element => {
+            element.style.textDecoration = 'none';
+        });
+        
+        x.forEach(element=> {
+            element.style.color = 'black';
+            element.style.fontSize = '20px';
+            element.style.margin = '10px';
+            element.style.backgroundColor = 'red';
+        })
+
+
+    </script>
+</body>
+</html>
