@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h2>DOM Mastery</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#basics">Basics</a></li>
+                <li><a href="#methods">Methods</a></li>
+                <li><a href="#examples">Examples</a></li>
+                <li><a href="#javascript">JavaScript</a></li>
+                <li><a href="#practice">Practice</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>DOM Manipulation Learning Hub</h1>
+            <p class="hero-subtitle">Master the Document Object Model with JavaScript</p>
+            <div class="hero-badge">Interactive Learning Experience</div>
+        </section>
+
+        <section id="basics" class="section">
+            <h2>🎯 What is DOM Manipulation?</h2>
+            <div class="content-grid">
+                <div class="card">
+                    <h3>Document Object Model</h3>
+                    <p>The DOM is a programming interface that represents the page so that programs can change the document structure, style, and content.</p>
+                </div>
+                <div class="card">
+                    <h3>Why Learn DOM?</h3>
+                    <p>DOM manipulation allows you to create dynamic, interactive web pages that respond to user actions in real-time.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="methods" class="section">
+            <h2>🔧 Essential DOM Methods</h2>
+            <div class="method-category">
+                <h3>Selecting Elements</h3>
+                <div class="method-list">
+                    <div class="method-item">
+                        <code>getElementById('id')</code>
+                        <span>Select element by ID</span>
+                    </div>
+                    <div class="method-item">
+                        <code>querySelector('.class')</code>
+                        <span>Select first matching element</span>
+                    </div>
+                    <div class="method-item">
+                        <code>querySelectorAll('tag')</code>
+                        <span>Select all matching elements</span>
+                    </div>
+                    <div class="method-item">
+                        <code>getElementsByClassName('class')</code>
+                        <span>Select by class name</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="method-category">
+                <h3>Modifying Content</h3>
+                <div class="method-list">
+                    <div class="method-item">
+                        <code>innerHTML</code>
+                        <span>Change HTML content</span>
+                    </div>
+                    <div class="method-item">
+                        <code>textContent</code>
+                        <span>Change text content</span>
+                    </div>
+                    <div class="method-item">
+                        <code>setAttribute()</code>
+                        <span>Set element attributes</span>
+                    </div>
+                    <div class="method-item">
+                        <code>style.property</code>
+                        <span>Change CSS styles</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="method-category">
+                <h3>Creating & Removing</h3>
+                <div class="method-list">
+                    <div class="method-item">
+                        <code>createElement()</code>
+                        <span>Create new element</span>
+                    </div>
+                    <div class="method-item">
+                        <code>appendChild()</code>
+                        <span>Add element to parent</span>
+                    </div>
+                    <div class="method-item">
+                        <code>removeChild()</code>
+                        <span>Remove element</span>
+                    </div>
+                    <div class="method-item">
+                        <code>cloneNode()</code>
+                        <span>Clone existing element</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="examples" class="section">
+            <h2>💡 Real-Life DOM Examples</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h4>🛒 Shopping Cart Counter</h4>
+                    <p>Update cart count dynamically like e-commerce sites</p>
+                    <div class="example-demo">
+                        <div class="cart-display">
+                            <span>🛒 Cart: </span>
+                            <span id="cart-count" class="count-badge">0</span>
+                        </div>
+                        <button id="add-to-cart" class="demo-btn">Add Item</button>
+                        <button id="remove-from-cart" class="demo-btn">Remove Item</button>
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h4>🌙 Dark Mode Toggle</h4>
+                    <p>Switch themes like modern websites</p>
+                    <div class="example-demo">
+                        <button id="theme-toggle" class="demo-btn">🌙 Toggle Theme</button>
+                        <div id="theme-demo" class="theme-demo-box">
+                            <h5>Sample Content</h5>
+                            <p>This content changes with theme!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h4>📝 Live Form Validation</h4>
+                    <p>Real-time input validation like registration forms</p>
+                    <div class="example-demo">
+                        <input type="email" id="email-input" placeholder="Enter email..." class="form-input">
+                        <div id="email-feedback" class="feedback"></div>
+                        <input type="password" id="password-input" placeholder="Enter password..." class="form-input">
+                        <div id="password-feedback" class="feedback"></div>
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h4>📊 Live Data Dashboard</h4>
+                    <p>Update statistics in real-time like analytics dashboards</p>
+                    <div class="example-demo">
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-label">Views</span>
+                                <span id="views-count" class="stat-value">1,234</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Users</span>
+                                <span id="users-count" class="stat-value">567</span>
+                            </div>
+                        </div>
+                        <button id="update-stats" class="demo-btn">📈 Update Stats</button>
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h4>🔍 Search Filter</h4>
+                    <p>Filter content dynamically like search features</p>
+                    <div class="example-demo">
+                        <input type="text" id="search-input" placeholder="Search items..." class="form-input">
+                        <ul id="search-list" class="search-results">
+                            <li data-category="fruit">🍎 Apple</li>
+                            <li data-category="fruit">🍌 Banana</li>
+                            <li data-category="vegetable">🥕 Carrot</li>
+                            <li data-category="fruit">🍇 Grapes</li>
+                            <li data-category="vegetable">🥬 Lettuce</li>
+                            <li data-category="fruit">🍊 Orange</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h4>📋 Todo List Manager</h4>
+                    <p>Add, complete, and delete tasks like productivity apps</p>
+                    <div class="example-demo">
+                        <div class="todo-input-group">
+                            <input type="text" id="todo-input" placeholder="Add new task..." class="form-input">
+                            <button id="add-todo" class="demo-btn">➕ Add</button>
+                        </div>
+                        <ul id="todo-list" class="todo-list"></ul>
+                        <div class="todo-stats">
+                            <span>Total: <span id="total-todos">0</span></span>
+                            <span>Completed: <span id="completed-todos">0</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="javascript" class="section">
+            <h2>💻 Complete JavaScript Code</h2>
+            <p style="text-align: center; color: #cbd5e1; font-size: 1.2rem; margin-bottom: 2rem;">
+                Study the complete JavaScript implementation powering all the interactive examples above
+            </p>
+            
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h4>🛒 Shopping Cart JavaScript</h4>
+                    <div class="example-demo">
+                        <div class="code-block">
+                            <code>// Shopping Cart Counter
+let cartCount = 0;
+const cartElement = document.getElementById('cart-count');
+const addBtn = document.getElementById('add-to-cart');
+const removeBtn = document.getElementById('remove-from-cart');
+
+addBtn.addEventListener('click', () => {
+    cartCount++;
+    cartElement.textContent = cartCount;
+    cartElement.style.transform = 'scale(1.2)';
+    setTimeout(() => cartElement.style.transform = 'scale(1)', 200);
+});
+
+removeBtn.addEventListener('click', () => {
+    if (cartCount > 0) {
+        cartCount--;
+        cartElement.textContent = cartCount;
+        cartElement.style.transform = 'scale(0.8)';
+        setTimeout(() => cartElement.style.transform = 'scale(1)', 200);
+    }
+});</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h4>🌙 Theme Toggle JavaScript</h4>
+                    <div class="example-demo">
+                        <div class="code-block">
+                            <code>// Dark Mode Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const themeDemo = document.getElementById('theme-demo');
+let isDark = false;
+
+themeToggle.addEventListener('click', () => {
+    isDark = !isDark;
+    if (isDark) {
+        themeDemo.classList.add('dark-theme');
+        themeToggle.textContent = '☀️ Toggle Theme';
+    } else {
+        themeDemo.classList.remove('dark-theme');
+        themeToggle.textContent = '🌙 Toggle Theme';
+    }
+});</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h4>📝 Form Validation JavaScript</h4>
+                    <div class="example-demo">
+                        <div class="code-block">
+                            <code>// Live Form Validation
+const emailInput = document.getElementById('email-input');
+const emailFeedback = document.getElementById('email-feedback');
+
+emailInput.addEventListener('input', (e) => {
+    const email = e.target.value;
+    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    
+    if (email === '') {
+        emailFeedback.textContent = '';
+        emailFeedback.className = 'feedback';
+    } else if (isValid) {
+        emailFeedback.textContent = '✅ Valid email format';
+        emailFeedback.className = 'feedback success';
+    } else {
+        emailFeedback.textContent = '❌ Invalid email format';
+        emailFeedback.className = 'feedback error';
+    }
+});</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h4>📊 Dashboard Animation JavaScript</h4>
+                    <div class="example-demo">
+                        <div class="code-block">
+                            <code>// Live Data Dashboard with Animation
+const updateBtn = document.getElementById('update-stats');
+
+function animateNumber(element, start, end) {
+    const duration = 1000;
+    const startTime = performance.now();
+    
+    function updateNumber(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        const current = Math.floor(start + (end - start) * progress);
+        element.textContent = current.toLocaleString();
+        
+        if (progress < 1) {
+            requestAnimationFrame(updateNumber);
+        }
+    }
+    requestAnimationFrame(updateNumber);
+}
+
+updateBtn.addEventListener('click', () => {
+    const newViews = Math.floor(Math.random() * 10000) + 1000;
+    const newUsers = Math.floor(Math.random() * 1000) + 100;
+    
+    animateNumber(viewsCount, 
+        parseInt(viewsCount.textContent.replace(/,/g, '')), newViews);
+    animateNumber(usersCount, 
+        parseInt(usersCount.textContent), newUsers);
+});</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h4>🔍 Search Filter JavaScript</h4>
+                    <div class="example-demo">
+                        <div class="code-block">
+                            <code>// Dynamic Search Filter
+const searchInput = document.getElementById('search-input');
+const searchList = document.getElementById('search-list');
+const items = searchList.querySelectorAll('li');
+
+searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    
+    items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const category = item.dataset.category;
+        
+        if (text.includes(searchTerm) || category.includes(searchTerm)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+    
+    // Handle "No results" message
+    const visibleItems = Array.from(items)
+        .filter(item => item.style.display !== 'none');
+    
+    if (visibleItems.length === 0 && searchTerm !== '') {
+        // Show no results message
+    }
+});</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h4>📋 Todo List JavaScript</h4>
+                    <div class="example-demo">
+                        <div class="code-block">
+                            <code>// Todo List Manager
+let todos = [];
+
+function addTodo() {
+    const text = todoInput.value.trim();
+    if (text === '') return;
+    
+    const todo = {
+        id: Date.now(),
+        text: text,
+        completed: false
+    };
+    
+    todos.push(todo);
+    todoInput.value = '';
+    renderTodos();
+}
+
+function renderTodos() {
+    todoList.innerHTML = '';
+    
+    todos.forEach(todo => {
+        const li = document.createElement('li');
+        li.className = `todo-item ${todo.completed ? 'completed' : ''}`;
+        li.innerHTML = `
+            &lt;span class="todo-text"&gt;${todo.text}&lt;/span&gt;
+            &lt;div class="todo-actions"&gt;
+                &lt;button onclick="toggleTodo(${todo.id})"&gt;
+                    ${todo.completed ? '↩️' : '✅'}
+                &lt;/button&gt;
+                &lt;button onclick="deleteTodo(${todo.id})"&gt;🗑️&lt;/button&gt;
+            &lt;/div&gt;
+        `;
+        todoList.appendChild(li);
+    });
+    
+    // Update statistics
+    totalTodos.textContent = todos.length;
+    completedTodos.textContent = todos.filter(todo => todo.completed).length;
+}</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 3rem; text-align: center;">
+                <h3>📖 Learning Notes</h3>
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    <strong>Key Concepts Demonstrated:</strong><br>
+                    • <code>addEventListener()</code> - Attach event handlers to elements<br>
+                    • <code>getElementById()</code> - Select elements by their ID<br>
+                    • <code>querySelector()</code> - Select elements using CSS selectors<br>
+                    • <code>textContent</code> - Update text content safely<br>
+                    • <code>innerHTML</code> - Update HTML content (use carefully)<br>
+                    • <code>classList.add/remove()</code> - Manage CSS classes<br>
+                    • <code>createElement()</code> - Create new HTML elements<br>
+                    • <code>appendChild()</code> - Add elements to the DOM<br>
+                    • <code>style.property</code> - Modify CSS styles directly<br>
+                    • <code>dataset</code> - Access data attributes<br>
+                    • Array methods like <code>forEach()</code>, <code>filter()</code>, <code>map()</code><br>
+                    • Regular expressions for validation<br>
+                    • Animation with <code>requestAnimationFrame()</code>
+                </p>
+            </div>
+        </section>
+
+        <section id="practice" class="section">
+            <h2>🎮 Practice Zone & Solutions</h2>
+            <div class="practice-area">
+                <h3>Try It Yourself!</h3>
+                <p>Copy these JavaScript solutions into your index.js file to make the examples work:</p>
+                
+                <div class="solution-tabs">
+                    <button class="tab-btn active" data-tab="cart">Shopping Cart</button>
+                    <button class="tab-btn" data-tab="theme">Dark Mode</button>
+                    <button class="tab-btn" data-tab="validation">Form Validation</button>
+                    <button class="tab-btn" data-tab="dashboard">Dashboard</button>
+                    <button class="tab-btn" data-tab="search">Search Filter</button>
+                    <button class="tab-btn" data-tab="todo">Todo List</button>
+                </div>
+
+                <div class="solution-content">
+                    <div class="solution-tab active" id="cart-solution">
+                        <h4>🛒 Shopping Cart Solution</h4>
+                        <pre class="code-block"><code>// Shopping Cart Counter
+let cartCount = 0;
+const cartElement = document.getElementById('cart-count');
+const addBtn = document.getElementById('add-to-cart');
+const removeBtn = document.getElementById('remove-from-cart');
+
+addBtn.addEventListener('click', () => {
+    cartCount++;
+    cartElement.textContent = cartCount;
+    cartElement.style.transform = 'scale(1.2)';
+    setTimeout(() => cartElement.style.transform = 'scale(1)', 200);
+});
+
+removeBtn.addEventListener('click', () => {
+    if (cartCount > 0) {
+        cartCount--;
+        cartElement.textContent = cartCount;
+        cartElement.style.transform = 'scale(0.8)';
+        setTimeout(() => cartElement.style.transform = 'scale(1)', 200);
+    }
+});</code></pre>
+                    </div>
+
+                    <div class="solution-tab" id="theme-solution">
+                        <h4>🌙 Dark Mode Toggle Solution</h4>
+                        <pre class="code-block"><code>// Dark Mode Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const themeDemo = document.getElementById('theme-demo');
+let isDark = false;
+
+themeToggle.addEventListener('click', () => {
+    isDark = !isDark;
+    if (isDark) {
+        themeDemo.classList.add('dark-theme');
+        themeToggle.textContent = '☀️ Toggle Theme';
+    } else {
+        themeDemo.classList.remove('dark-theme');
+        themeToggle.textContent = '🌙 Toggle Theme';
+    }
+});</code></pre>
+                    </div>
+
+                    <div class="solution-tab" id="validation-solution">
+                        <h4>📝 Form Validation Solution</h4>
+                        <pre class="code-block"><code>// Live Form Validation
+const emailInput = document.getElementById('email-input');
+const passwordInput = document.getElementById('password-input');
+const emailFeedback = document.getElementById('email-feedback');
+const passwordFeedback = document.getElementById('password-feedback');
+
+emailInput.addEventListener('input', (e) => {
+    const email = e.target.value;
+    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    
+    if (email === '') {
+        emailFeedback.textContent = '';
+        emailFeedback.className = 'feedback';
+    } else if (isValid) {
+        emailFeedback.textContent = '✅ Valid email format';
+        emailFeedback.className = 'feedback success';
+    } else {
+        emailFeedback.textContent = '❌ Invalid email format';
+        emailFeedback.className = 'feedback error';
+    }
+});
+
+passwordInput.addEventListener('input', (e) => {
+    const password = e.target.value;
+    const strength = password.length >= 8 ? 'Strong' : 
+                    password.length >= 6 ? 'Medium' : 'Weak';
+    
+    if (password === '') {
+        passwordFeedback.textContent = '';
+        passwordFeedback.className = 'feedback';
+    } else {
+        passwordFeedback.textContent = `Password strength: ${strength}`;
+        passwordFeedback.className = `feedback ${strength === 'Strong' ? 'success' : 'error'}`;
+    }
+});</code></pre>
+                    </div>
+
+                    <div class="solution-tab" id="dashboard-solution">
+                        <h4>📊 Dashboard Solution</h4>
+                        <pre class="code-block"><code>// Live Data Dashboard
+const viewsCount = document.getElementById('views-count');
+const usersCount = document.getElementById('users-count');
+const updateBtn = document.getElementById('update-stats');
+
+updateBtn.addEventListener('click', () => {
+    // Simulate real-time data updates
+    const newViews = Math.floor(Math.random() * 10000) + 1000;
+    const newUsers = Math.floor(Math.random() * 1000) + 100;
+    
+    // Animate the number change
+    animateNumber(viewsCount, parseInt(viewsCount.textContent.replace(/,/g, '')), newViews);
+    animateNumber(usersCount, parseInt(usersCount.textContent), newUsers);
+});
+
+function animateNumber(element, start, end) {
+    const duration = 1000;
+    const startTime = performance.now();
+    
+    function updateNumber(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        const current = Math.floor(start + (end - start) * progress);
+        element.textContent = current.toLocaleString();
+        
+        if (progress < 1) {
+            requestAnimationFrame(updateNumber);
+        }
+    }
+    
+    requestAnimationFrame(updateNumber);
+}</code></pre>
+                    </div>
+
+                    <div class="solution-tab" id="search-solution">
+                        <h4>🔍 Search Filter Solution</h4>
+                        <pre class="code-block"><code>// Search Filter
+const searchInput = document.getElementById('search-input');
+const searchList = document.getElementById('search-list');
+const items = searchList.querySelectorAll('li');
+
+searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    
+    items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const category = item.dataset.category;
+        
+        if (text.includes(searchTerm) || category.includes(searchTerm)) {
+            item.classList.remove('hidden');
+            item.style.display = 'block';
+        } else {
+            item.classList.add('hidden');
+            item.style.display = 'none';
+        }
+    });
+    
+    // Show "No results" message if all items are hidden
+    const visibleItems = Array.from(items).filter(item => !item.classList.contains('hidden'));
+    if (visibleItems.length === 0 && searchTerm !== '') {
+        if (!document.getElementById('no-results')) {
+            const noResults = document.createElement('li');
+            noResults.id = 'no-results';
+            noResults.textContent = 'No results found';
+            noResults.style.fontStyle = 'italic';
+            searchList.appendChild(noResults);
+        }
+    } else {
+        const noResults = document.getElementById('no-results');
+        if (noResults) noResults.remove();
+    }
+});</code></pre>
+                    </div>
+
+                    <div class="solution-tab" id="todo-solution">
+                        <h4>📋 Todo List Solution</h4>
+                        <pre class="code-block"><code>// Todo List Manager
+const todoInput = document.getElementById('todo-input');
+const addTodoBtn = document.getElementById('add-todo');
+const todoList = document.getElementById('todo-list');
+const totalTodos = document.getElementById('total-todos');
+const completedTodos = document.getElementById('completed-todos');
+
+let todos = [];
+
+addTodoBtn.addEventListener('click', addTodo);
+todoInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') addTodo();
+});
+
+function addTodo() {
+    const text = todoInput.value.trim();
+    if (text === '') return;
+    
+    const todo = {
+        id: Date.now(),
+        text: text,
+        completed: false
+    };
+    
+    todos.push(todo);
+    todoInput.value = '';
+    renderTodos();
+}
+
+function toggleTodo(id) {
+    todos = todos.map(todo => 
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    );
+    renderTodos();
+}
+
+function deleteTodo(id) {
+    todos = todos.filter(todo => todo.id !== id);
+    renderTodos();
+}
+
+function renderTodos() {
+    todoList.innerHTML = '';
+    
+    todos.forEach(todo => {
+        const li = document.createElement('li');
+        li.className = `todo-item ${todo.completed ? 'completed' : ''}`;
+        li.innerHTML = `
+            <span class="todo-text">${todo.text}</span>
+            <div class="todo-actions">
+                <button class="todo-btn" onclick="toggleTodo(${todo.id})">
+                    ${todo.completed ? '↩️' : '✅'}
+                </button>
+                <button class="todo-btn" onclick="deleteTodo(${todo.id})">🗑️</button>
+            </div>
+        `;
+        todoList.appendChild(li);
+    });
+    
+    // Update stats
+    totalTodos.textContent = todos.length;
+    completedTodos.textContent = todos.filter(todo => todo.completed).length;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources">
+            <h2>📚 Learning Resources</h2>
+            <div class="resource-grid">
+                <div class="resource-item">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank">MDN DOM Reference</a></li>
+                        <li><a href="https://javascript.info/dom-nodes" target="_blank">JavaScript.info DOM</a></li>
+                    </ul>
+                </div>
+                <div class="resource-item">
+                    <h4>Interactive Tutorials</h4>
+                    <ul>
+                        <li><a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/" target="_blank">FreeCodeCamp</a></li>
+                        <li><a href="https://www.codecademy.com/learn/introduction-to-javascript" target="_blank">Codecademy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DOM Manipulation Learning Hub - Master JavaScript DOM Skills</p>
+    </footer>
+</body>
+</html>
