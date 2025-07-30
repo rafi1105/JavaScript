@@ -87,6 +87,18 @@ lexical()()();            // lexical() returns l1, l1() returns l2, l2() execute
 
 })()
 
+let cricket = (function(){
+    let score = 0;
+    return{
+        getScore: function(){
+            console.log(score)
+        },
+        setScore: function(val){
+            score= val;
+        }
+    }
+})()
+
 // hosting 
 host()
 function host(){

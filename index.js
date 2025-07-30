@@ -1,6 +1,6 @@
-function getvalue(val){
-    // short hand for return with if 
-    return (val < 25) ? "d" : (val < 50) ? "c" : "a";
-}
+let count = 0;
 
-console.log(getvalue(34))
+while (count < 3) {
+  console.log("Hello");
+  count++;
+}
