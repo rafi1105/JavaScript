@@ -14,9 +14,17 @@
             color: #ccc;
             font-size: 2em;
         }
+        .dark{
+            background: #333;
+            color: #fff;
+        }
+        .light{
+            background: #fff;
+            color: #000;
+        }
     </style>
 </head>
-<body>
+<body class="dark">
     <h1>Learn DOM Manipulation</h1>
     <p class="classDemo">i am a class</p>
     <span id="id-1">hidden me!</span>
@@ -40,6 +48,10 @@
     <h3>Safe Text Only</h3>
     <p class="hidden-content" style="color: blue;" ></p>
     <p class="safeInsert"></p>
+    <button onclick="darkMode()" class="dark">Toggle Dark Mode</button>
+
+    <hr>
+    <h2>todo</h2>
 <script src="index.js"></script>
 </body>
 </html>

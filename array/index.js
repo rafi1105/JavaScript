@@ -1,4 +1,4 @@
-let arr = [1,2,3,4,5,5];
+let arr = [1,2,3];
 arr[2]= 0;
 arr.push(11);
 let sr= arr.sort(function(a,b){
@@ -23,8 +23,10 @@ console.log(filter)
 
 // reduce
 let reduce = arr.reduce(function(accumulator,val){
+    console.log(val)
     return accumulator+val
-},0) // accumulator -> starting values
+},0) 
+console.log("reduce", reduce)// accumulator -> starting values
 
 // find 
 let find = arr.find (function(val){
