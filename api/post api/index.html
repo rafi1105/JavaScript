@@ -4,10 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #post-container{
+            display: grid;
+            grid-template-columns: 20% 60% 20%;
+        }
+        .add{
+            background: red;
+            color: white;
+
+        }
+    </style>
 </head>
 <body>
     <button onclick="loadData()">Load Data</button>
     <button onclick="loadPost()">Load Post</button>
+    <ul id="post-container">
+   
+    </ul>
     <script src="index.js"></script>
 </body>
 </html>

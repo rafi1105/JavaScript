@@ -25,3 +25,4 @@ let prime = function(arr){
   return primeNO;
 }
 console.log(prime([5,2,10,14,11,15]))
+console.log("2"+2-"2")
